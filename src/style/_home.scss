@@ -1,0 +1,24 @@
+.game-gird{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    &_item{
+        width: 200px;
+        height: 70px;
+        text-align: center;
+       font-family: $font-1;
+       letter-spacing: 2px;
+       text-transform: capitalize;
+       font-weight: 500;
+        background-color: aqua;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover{
+            background-color: $color-3;
+        }
+
+    }
+}
