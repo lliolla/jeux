@@ -1,0 +1,64 @@
+
+
+header{
+    background-color: #F5EFED;
+}
+header>h1{
+    color: #292626;
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+}
+.score-board{
+    border: 2px solid #F5EFED; 
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px  ;
+    width: 500px;
+    padding: 10px;
+    margin: 20px auto ;
+}
+#memory-gird{
+    background-color:#F5EFED ;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    flex-wrap:wrap;
+    perspective: 800px;
+}
+.memory-card{
+    position: relative;
+    transform-style: preserve-3d; 
+    transition: all .8s linear;
+}
+.flip{
+    transform: rotateY(180deg);
+}
+
+img{
+    width: 100px;
+}
+
+.memory-face,.memory-back {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid#292626; 
+    border-radius: 15px;
+    box-shadow: #c2c2c2 0px 5px 15px;
+}
+
+.memory-face{
+    background-color: #cca596;
+}
+.memory-back {
+    position: absolute;
+    background-color: #cfff7d;
+
+}
+
+.memory-find{
+   background-color: #F5EFED;;
+}
+
+
