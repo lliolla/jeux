@@ -35,7 +35,15 @@ console.log("shuffleArray",cards,turns);
 
           </section>
         <section className="game-gird">
-        
+         {
+            cards.map(card => (
+                <div className="card" key ={card.id} >
+                    <div className='card-face'>
+                        <img src={card.src} alt="" />
+                    </div>
+                </div>
+            ))
+         }
         </section>
           
 

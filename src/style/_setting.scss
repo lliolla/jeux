@@ -38,11 +38,11 @@ $black: #313638;
 //common elements
 .game-container{
     background-color: $color-4 ;
-    height: 100%;
+  
     header{
-        background-color: purple-light;
+        background-color: $purple-light;
     }
-    header > h1 {
+    header>  h1 {
         color:$purple;
         text-align: center;
         padding: 20px;
@@ -65,6 +65,23 @@ $black: #313638;
     }
     .game-gird{
         background-color:$grey;
+    width: 500px;
+    height: 400px;
+    border-radius: 8px  ;
+    margin: auto;
+    display: flex;
+    flex-wrap:wrap;
+    perspective: 800px;
+
+        .card{
+            .card-face{
+        
+                    img{
+                        width: 100px;
+                    }
+            
+            }
+        }
     }
 
 }
