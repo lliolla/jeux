@@ -1,5 +1,24 @@
 
 
+section> .card{
+    .card-face, .card-back {
+        margin: 5px;
+        padding: 5px;
+        border: 2px solid $black; 
+        border-radius: 15px;
+        box-shadow: $grey 0px 5px 15px;
+                img{
+                    width: 100px;
+                }
+
+    }
+    .card-face{
+        background-color: $purple-light; 
+       } 
+    .card-back{
+        background-color: $green;   
+    } 
+}
 
 
 
@@ -12,17 +31,9 @@
     transform: rotateY(180deg);
 }
 
-img{
-    width: 100px;
-}
 
-.memory-face,.memory-back {
-    margin: 5px;
-    padding: 5px;
-    border: 2px solid#292626; 
-    border-radius: 15px;
-    box-shadow: #c2c2c2 0px 5px 15px;
-}
+
+
 
 .memory-face{
     background-color: #cca596;

@@ -15,7 +15,7 @@ const shuffleCard = ()=>{
     setcards(shuffleArray)
     setturns(0)
     }   
-console.log("shuffleArray",cards,turns);
+
     /* gird memomry */
            /* card component */
           /* match card fonction */
@@ -41,6 +41,9 @@ console.log("shuffleArray",cards,turns);
                     <div className='card-face'>
                         <img src={card.src} alt="" />
                     </div>
+                    <div className='card-back'>
+                        <img src="../../public/assets/images/memory/fan.png" alt="" />
+                    </div> 
                 </div>
             ))
          }
