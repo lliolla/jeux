@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import {cardArray} from '../data/memoryData'
+import MemoryCard from '../components/MemoryCard';
 
 const Memory = () => {
 const cardArrayLenght = cardArray.length
 const [cards, setcards] = useState([])
 const [turns, setturns] = useState(0)
+const [choiceOne, setchoiceOne] = useState(0)
+const [choiceTwo, setchoiceTwo] = useState(0)
+
 
 const shuffleCard = ()=>{
     const shuffleArray =[...cardArray,...cardArray] //  create array of pairs of images
@@ -15,11 +19,12 @@ const shuffleCard = ()=>{
     setcards(shuffleArray)
     setturns(0)
     }   
-
-    /* gird memomry */
-           /* card component */
-          /* match card fonction */
-           /* flip card with css */
+const handleChoice=(card)=>{
+console.log("card",card);
+choiceOne ? setchoiceTwo(card) :setchoiceOne(card)
+console.log("choiceOne",choiceOne,"choiceTwo",choiceTwo)
+}
+  
     return (
         <div className="game-container">
             
@@ -37,14 +42,11 @@ const shuffleCard = ()=>{
         <section className="game-gird">
          {
             cards.map(card => (
-                <div className="card" key ={card.id} >
-                    <div className='card-face'>
-                        <img src={card.src} alt="" />
-                    </div>
-                    <div className='card-back'>
-                        <img src="../../public/assets/images/memory/fan.png" alt="" />
-                    </div> 
-                </div>
+                <MemoryCard 
+                key={card.id} 
+                card = {card}
+                handleChoice ={handleChoice}
+                />
             ))
          }
         </section>
