@@ -12,7 +12,7 @@ const MemoryCard = ({ card, handleChoice, flipped }) => {
           <img src="../../public/assets/images/memory/fan.png" alt="" />
         </div>
       </div>
- 
+     
   );
 };
 

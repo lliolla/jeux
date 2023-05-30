@@ -40,6 +40,7 @@ console.log("choiceOne",choiceOne,"choiceTwo",choiceTwo)
 
           </section>
         <section className="game-gird">
+        <div className="memory-game">
          {
             cards.map(card => (
                 <MemoryCard 
@@ -49,6 +50,7 @@ console.log("choiceOne",choiceOne,"choiceTwo",choiceTwo)
                 />
             ))
          }
+             </div>
         </section>
           
 

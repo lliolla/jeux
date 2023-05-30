@@ -1,7 +1,16 @@
-.memory-card {
+.memory-game{
+   
+    background-color: $grey-light;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+
+  .memory-card {
   cursor: pointer;
   position: relative;
-
   transition: 1s ease-in-out;
   transform-style: preserve-3d;
    
@@ -26,7 +35,9 @@
     background-color: $green;
     transform: rotateY(0deg);  
   }
+}  
 }
+
 
 .flipped {
   transform: rotateY(180deg);

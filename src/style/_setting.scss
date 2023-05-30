@@ -60,14 +60,10 @@ $black: #313638;
     }
   }
   .game-gird {
-    background-color: $grey-light;
-    width: 500px;
-    height: 400px;
-    border-radius: 8px;
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    perspective: 800px;
+    width: 550px;
+    height: 450px;
+    
   }
 }
 button {
