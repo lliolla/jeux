@@ -1,51 +1,45 @@
+.memory-card {
+  cursor: pointer;
+  position: relative;
 
-
-section> .card{
-    .card-face, .card-back {
-        margin: 5px;
-        padding: 5px;
-        border: 2px solid $black; 
-        border-radius: 15px;
-        box-shadow: $grey 0px 5px 15px;
-                img{
-                    width: 100px;
-                }
-
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+   
+  .card-face, .card-back {
+    /*  we put the back on the face*/
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid $black;
+    border-radius: 15px;
+    box-shadow: $grey 0px 5px 15px;
+    img {
+        width: 100px;
     }
-    .card-face{
-        background-color: $purple-light; 
-       } 
-    .card-back{
-        background-color: $green;   
-    } 
-}
-
-
-
-.memory-card{
-    position: relative;
-    transform-style: preserve-3d; 
-    transition: all .8s linear;
-}
-.flip{
+    /* define faces 's style*/
+  }
+  .card-face {
+    background-color: $purple-light;
     transform: rotateY(180deg);
+     position: absolute;
+  }
+  .card-back {
+    background-color: $green;
+    transform: rotateY(0deg);  
+  }
 }
 
+.flipped {
+  transform: rotateY(180deg);
+}
 
-
-
-
-.memory-face{
-    background-color: #cca596;
+.memory-face {
+  background-color: #cca596;
 }
 .memory-back {
-    position: absolute;
-    background-color: #cfff7d;
-
+  position: absolute;
+  background-color: #cfff7d;
 }
 
-.memory-find{
-   background-color: #F5EFED;;
+.memory-find {
+  background-color: #f5efed;
 }
-
-
