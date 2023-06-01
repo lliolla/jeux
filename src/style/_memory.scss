@@ -1,5 +1,4 @@
 .memory-game{
-   
     background-color: $grey-light;
     border-radius: 8px;
     display: flex;
@@ -9,27 +8,30 @@
     perspective: 800px;
 
   .memory-card {
+     /*  we put the back on the face*/
   cursor: pointer;
-  position: relative;
-  transition: 1s ease-in-out;
+   position: relative;
+ transition: .7s ease-in-out;
   transform-style: preserve-3d;
    
   .card-face, .card-back {
-    /*  we put the back on the face*/
+  /* define faces 's style*/
+    display: block;
     margin: 5px;
     padding: 5px;
     border: 2px solid $black;
     border-radius: 15px;
     box-shadow: $grey 0px 5px 15px;
+    backface-visibility: hidden;
     img {
         width: 100px;
     }
-    /* define faces 's style*/
   }
+  /* define faces 's style*/
   .card-face {
+    transform: rotateY(180deg);  
     background-color: $purple-light;
-    transform: rotateY(180deg);
-     position: absolute;
+    position: absolute;
   }
   .card-back {
     background-color: $green;
@@ -37,20 +39,15 @@
   }
 }  
 }
-
-
-.flipped {
-  transform: rotateY(180deg);
-}
-
-.memory-face {
-  background-color: #cca596;
-}
-.memory-back {
-  position: absolute;
-  background-color: #cfff7d;
-}
-
 .memory-find {
-  background-color: #f5efed;
+    background-color: #f5efed;
+  }
+ /* define flipped card style*/
+.flipped   {
+    transform: rotateY(180deg);  
+ 
 }
+
+
+
+
