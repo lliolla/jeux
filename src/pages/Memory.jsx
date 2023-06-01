@@ -8,6 +8,7 @@ const [cards, setcards] = useState([])
 const [turns, setturns] = useState(0)
 const [choiceOne, setchoiceOne] = useState(0)
 const [choiceTwo, setchoiceTwo] = useState(0)
+const [disabled, setdisabled] = useState(false)
 
 
 const shuffleCard = ()=>{
@@ -27,8 +28,9 @@ console.log("choiceOne",choiceOne,"choiceTwo",choiceTwo)
 // compare two selected card
 useEffect(() => {
   if(choiceOne && choiceTwo){
+    setdisabled(true)
+    
     if(choiceOne.src === choiceTwo.src){
-        console.log("matched");
         setcards(prevCards =>{
             return prevCards.map(card=>{
                 if(card.src === choiceOne.src){
@@ -48,14 +50,15 @@ useEffect(() => {
 
  
 }, [choiceOne,choiceTwo])
+console.log("setdisabled",disabled);
 
-console.log('card',cards)
 
 //reset choices and increase turn
  const resetTurns =()=>{
     setchoiceOne(null)
     setchoiceTwo(null)
     setturns(prevTurns=> prevTurns+1 )
+    setdisabled(false)
  } 
     return (
         <div className="game-container">
@@ -80,6 +83,7 @@ console.log('card',cards)
                 card = {card}
                 handleChoice ={handleChoice}
                 flipped={card === choiceOne || card ===choiceTwo || card.matched}
+                disabled ={disabled}
                 />
             ))
          }

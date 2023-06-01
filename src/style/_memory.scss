@@ -11,8 +11,8 @@
      /*  we put the back on the face*/
   cursor: pointer;
    position: relative;
- transition: .7s ease-in-out;
-  transform-style: preserve-3d;
+   transition: .7s ease-in-out;
+   transform-style: preserve-3d;
    
   .card-face, .card-back {
   /* define faces 's style*/
@@ -30,12 +30,14 @@
   /* define faces 's style*/
   .card-face {
     transform: rotateY(180deg);  
+    transition: all ease-in 0.2s ;
     background-color: $purple-light;
     position: absolute;
   }
   .card-back {
     background-color: $green;
-    transform: rotateY(0deg);  
+    transform: rotateY(0deg);
+    transition: all ease-in 0.2s ;  
   }
 }  
 }
@@ -45,7 +47,7 @@
  /* define flipped card style*/
 .flipped   {
     transform: rotateY(180deg);  
- 
+ transition-delay: 0.2s;
 }
 
 
