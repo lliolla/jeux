@@ -3,22 +3,44 @@ import {cardArray} from '../data/memoryData'
 import MemoryCard from '../components/MemoryCard';
 
 const Memory = () => {
-const cardArrayLenght = cardArray.length
 const [cards, setcards] = useState([])
 const [turns, setturns] = useState(0)
+const [prevTurns, setPrevTurns] = useState(0);
 const [choiceOne, setchoiceOne] = useState(0)
 const [choiceTwo, setchoiceTwo] = useState(0)
 const [disabled, setdisabled] = useState(false)
+const [gameWon, setGameWon] = useState(false)
 
+
+//Know if all card are return
+useEffect(() => {
+    if (cards.every(card => card.matched)) {
+      setGameWon(true);
+ setTimeout(() => {
+    setGameWon(false);
+    shuffleCard()
+
+ }, 2000);
+    }
+  }, [cards]);
+
+// start new game   automatically
+useEffect(() => {
+shuffleCard()
+
+}, [])
 
 const shuffleCard = ()=>{
     const shuffleArray =[...cardArray,...cardArray] //  create array of pairs of images
     //sort image in the news array
     .sort(()=>Math.random()-0.5 )
     .map((card) =>({...card,id:Math.random()}))
-
+    setchoiceOne(null)
+    setchoiceTwo(null)
+    setPrevTurns(turns);
     setcards(shuffleArray)
     setturns(0)
+    setGameWon(false);
     }   
 const handleChoice=(card)=>{
 console.log("card",card);
@@ -67,13 +89,17 @@ console.log("setdisabled",disabled);
             <h1> Jeu de memory</h1> 
             </header>
           <section className="score-board" >
-          <p>score :</p>
-          <p>nombre de coup </p>
-          <p>Memory lenght :  
-           {cardArrayLenght}</p>
+          <div className="previous-turns">
+          <p>Record a battre : {prevTurns} </p>
+        </div>
+          <p>Nombre tours : {turns}</p>
            <button className="button" onClick={shuffleCard}>nouveau jeux</button>
-
+          
           </section>
+          { gameWon &&( <div className="win-game">
+                <p>Bravo la partie est terminée</p>
+            </div> )
+          }
         <section className="game-gird">
         <div className="memory-game">
          {

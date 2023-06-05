@@ -41,9 +41,22 @@
   }
 }  
 }
-.memory-find {
-    background-color: #f5efed;
-  }
+.win-game{
+    background-color: $green;
+    text-align: center;
+    border-radius: 8px;
+    width: 50%;
+    height: 3rem;
+    margin: 20px auto;
+
+   
+    p{
+        color:$black;
+        font-weight: 700;
+        padding: 10px;
+    }
+  
+}
  /* define flipped card style*/
 .flipped   {
     transform: rotateY(180deg);  
