@@ -25,6 +25,13 @@ export const gameData =[
         title:"candy crush",
         info:"jeux de memory ou l'on doit faire des paires avec des catres que l'on retourne deux par deux"
   
+    },
+    {
+        id:5,
+        link:"/math",
+        title:"Jaux de math",
+        info:"jeux de memory ou l'on doit faire des paires avec des catres que l'on retourne deux par deux"
+  
     }
 
 ];

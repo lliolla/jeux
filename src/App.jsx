@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Memory from "./pages/Memory";
-import Cisor from "./pages/Cisor";
+import Math from "./pages/Math";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/memory" element={<Memory />} />
-          <Route path="/cisor" element={<Cisor />} />
+          <Route path="/math" element={<Math />} />
         </Routes>
       </BrowserRouter>
     </>
