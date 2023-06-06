@@ -14,8 +14,8 @@ const Home = () => {
            <NavLink 
            to={game.link}
            className={(nav) => (nav.isActive ? "nav-active hover" : "hover")}
-
-           >  {game.title}</NavLink>
+           >  {game.title}
+           </NavLink>
           
          </div>
          )

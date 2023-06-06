@@ -1,6 +1,7 @@
 import { useState,useEffect } from 'react';
 import {cardArray} from '../data/memoryData'
 import MemoryCard from '../components/MemoryCard';
+import BtnExit from '../components/BtnExit';
 
 const Memory = () => {
 const [cards, setcards] = useState([])
@@ -87,7 +88,9 @@ console.log("setdisabled",disabled);
 
             <header>
             <h1> Jeu de memory</h1> 
+            <BtnExit />
             </header>
+           
           <section className="score-board" >
           <div className="previous-turns">
           <p>Record a battre : {prevTurns} </p>
@@ -101,7 +104,7 @@ console.log("setdisabled",disabled);
             </div> )
           }
         <section className="game-gird">
-        <div className="memory-game">
+        <div className="template-game">
          {
             cards.map(card => (
                 <MemoryCard 
