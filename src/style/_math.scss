@@ -1,0 +1,26 @@
+.content{
+    display: flex;
+    margin: 20px;
+    .numberOne ,.numberTwo {
+        display: block;
+           margin: 5px;
+           padding: 5px;
+           border: 2px solid $black;
+           border-radius: 15px;
+           box-shadow: $grey 0px 5px 15px;
+           backface-visibility: hidden;
+           width: 100px;
+           text-align: center;
+             
+        }
+        .sign{
+       
+         font-size: 30px;
+    
+        }
+}
+content-result{
+    display: flex;
+ 
+}
+
