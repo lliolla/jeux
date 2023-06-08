@@ -6,6 +6,7 @@ const Math = () => {
     const newGame =()=>{
         console.log("newGame")
     }
+    
     return (
       <div className="game-container">
   
