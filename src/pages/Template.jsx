@@ -20,8 +20,7 @@ const Template = () => {
  
 <section className="game-gird">
 <div className="template-game">
-
-     </div>
+</div>
      </section> 
      </div>  
  )

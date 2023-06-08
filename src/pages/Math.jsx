@@ -3,6 +3,9 @@ import { MathCard } from "../components/MathCard"
 
 
 const Math = () => {
+    const newGame =()=>{
+        console.log("newGame")
+    }
     return (
       <div className="game-container">
   
@@ -16,14 +19,14 @@ const Math = () => {
   
     <p>Record a battre : </p>
     <p>Nombre tours : </p>
-     {/* <button className="button" onClick={shuffleCard}>nouveau jeux</button> */}
+      <button className="button" onClick={newGame}>nouveau jeux</button> 
     
     </section>
    
   <section className="game-gird">
-  <div className="template-game">
+ 
   <MathCard />
-       </div>
+    
   </section>
     
   
