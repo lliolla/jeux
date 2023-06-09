@@ -2,15 +2,19 @@
 import { useRef, useState } from "react";
 
 export const MathCard = () => {
-    const [numberOne, setnumberOne] = useState(generateNumber(20))
-    const [numberTwo, setnumberTwo] = useState(generateNumber(20))
+    const miniNb = 10
+    const [numberOne, setnumberOne] = useState(generateNumber(miniNb))
+    const [numberTwo, setnumberTwo] = useState(generateNumber(miniNb))
 
     // const [result, setResult] = useState("");
     
-    const [hideMsg, setHideMsg] = useState(true); 
+    const [hideMsg, setHideMsg] = useState(false); 
+    const [hideMsgWin, sethideMsgWin] = useState(false);     
+    const [hideMsgLost, sethideMsgLost] = useState(false); 
+
     const inputValue = useRef();
     const correctAnswer =numberOne + numberTwo
-
+ 
     function generateNumber(max) {
     return Math.floor(Math.random() * max + 1);
     
@@ -24,37 +28,44 @@ export const MathCard = () => {
     console.log("userResult",userResult,"correctAnswer",correctAnswer)
     if(userResult===correctAnswer){
         setHideMsg(true)
-        setnumberOne(generateNumber(20))
-        setnumberTwo(generateNumber(20))
-        console.log("good",hideMsg)
+        sethideMsgWin(true)
+        sethideMsgLost(false)
+        setnumberOne(generateNumber(miniNb))
+        setnumberTwo(generateNumber(miniNb))
+        console.log("good",hideMsgWin,hideMsgLost)
     }else{
-        setHideMsg(false)
-        setnumberTwo(generateNumber(20))
-        setnumberOne(generateNumber(20))
-        console.log("bad",hideMsg)
+        setHideMsg(true)
+        sethideMsgWin(false)
+        sethideMsgLost(true)
+        setnumberTwo(generateNumber(miniNb))
+        setnumberOne(generateNumber(miniNb))
+        console.log("good",hideMsgWin,hideMsgLost)
     }
-    
-//decalage entre resultta et ce qui est entré
     inputValue.current.value = ""; 
+    setTimeout(()=>{
+        setHideMsg(false)
+      
+    },1500)
   };
 
   return (
     <div className="template-game">
-      <h3>Trouvez le resultat du calcul suivant :</h3>
-        <div className="msg">
-        <div className="win-msg">
-              <p>Bravo !</p>
-            </div>
-         
-         
-            <div className="lost-msg">
-              <p>
-                Perdu ! La bonne réponse est <span>{correctAnswer}</span>
-              </p>
-            </div>
-      
-        </div>
- 
+    {hideMsg &&(<div className="msg">
+                {
+                    hideMsgWin ?( <div className="win-msg">
+                    <p>Bravo !</p>
+              </div>) :(<div className="lost-msg">
+                      <p>
+                        Perdu ! La bonne réponse est <span>{correctAnswer}</span>
+                      </p>
+                    </div>)
+                }
+               
+                </div> )
+    
+    }
+                
+    <h3>Trouvez le resultat du calcul suivant :</h3>
       <section className="content">
         <div className="numberOne">
           <p>{numberOne}</p>

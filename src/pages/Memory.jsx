@@ -73,7 +73,6 @@ useEffect(() => {
 
  
 }, [choiceOne,choiceTwo])
-console.log("setdisabled",disabled);
 
 
 //reset choices and increase turn
