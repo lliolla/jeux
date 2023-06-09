@@ -15,6 +15,7 @@ const Math = () => {
       </header>
 
       <section className="score-board">
+        
         <div className="score-board-timer">
           <span> 00 : 00 </span>
         </div>
