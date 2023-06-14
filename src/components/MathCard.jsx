@@ -40,6 +40,8 @@ export const MathCard = () => {
       console.log("good", hideMsgWin, hideMsgLost);
     }
     inputValue.current.value = "";
+    inputValue.current.focus()
+
     setTimeout(() => {
       setHideMsg(false);
     }, 1500);
@@ -48,7 +50,7 @@ export const MathCard = () => {
   return (
     <div className="template-game">
       <div className="math-game">
-      <h3>Trouvez le resultat du calcul suivant :</h3>
+        <h3>Trouves le resultat du calcul suivant :</h3>
         {hideMsg && (
           <section className="msg">
             {hideMsgWin ? (
@@ -64,7 +66,7 @@ export const MathCard = () => {
             )}
           </section>
         )}
-     
+
         <section className="content">
           <div className="numberOne">
             <p>{numberOne}</p>

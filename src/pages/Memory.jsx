@@ -2,6 +2,7 @@ import { useState,useEffect } from 'react';
 import {cardArray} from '../data/memoryData'
 import MemoryCard from '../components/MemoryCard';
 import BtnExit from '../components/BtnExit';
+import FilterBar from '../components/FilterBar';
 
 const Memory = () => {
 const [cards, setcards] = useState([])
@@ -27,9 +28,8 @@ useEffect(() => {
 
 // start new game   automatically
 useEffect(() => {
-shuffleCard()
-
-}, [])
+    shuffleCard();
+  }, []);
 
 const shuffleCard = ()=>{
     const shuffleArray =[...cardArray,...cardArray] //  create array of pairs of images
@@ -92,6 +92,7 @@ useEffect(() => {
            
           <section className="score-board" >
           <div className="previous-turns">
+            <FilterBar />
           <p>Record a battre : {prevTurns} </p>
         </div>
           <p>Nombre tours : {turns}</p>
@@ -104,6 +105,7 @@ useEffect(() => {
           }
         <section className="game-gird">
         <div className="template-game">
+            <div className="memory-game">
          {
             cards.map(card => (
                 <MemoryCard 
@@ -115,6 +117,7 @@ useEffect(() => {
                 />
             ))
          }
+         </div>
              </div>
         </section>
           

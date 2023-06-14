@@ -1,4 +1,48 @@
-
+.memory-game{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 500px;
+    max-width: 100%;
+    min-width: 70%;
+    padding: 5px;
+    margin: 5px;
+   
+    .memory-card {
+        /*  we put the back on the face*/
+     cursor: pointer;
+      position: relative;
+      transition: .7s ease-in-out;
+      transform-style: preserve-3d;
+      
+     .card-face, .card-back {
+     /* define faces 's style*/
+       display: block;
+       margin: 5px;
+       padding: 5px;
+       border: 2px solid $black;
+       border-radius: 15px;
+       box-shadow: $grey 0px 5px 15px;
+       backface-visibility: hidden;
+       img {
+           width: 80px;
+       }
+     }
+     /* define faces 's style*/
+     .card-face {
+       transform: rotateY(180deg);  
+       transition: all ease-in 0.2s ;
+       background-color: $purple-light;
+       position: absolute;
+     }
+     .card-back {
+       background-color: $green;
+       transform: rotateY(0deg);
+       transition: all ease-in 0.2s ;  
+     }
+    }   
+}
 .memory-card {
     /*  we put the back on the face*/
  cursor: pointer;
